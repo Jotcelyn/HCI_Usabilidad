@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🍔 BurgerCHAOS 🍔</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV CAÓTICA -->
+<nav id="chaosNav">
+  <h1 class="logo">🍔 BurgerCHAOS 🍔</h1>
+  <div class="nav-items">
+    <button title="Esto es el menú (o no)"><span>💀</span><span class="lbl">Menú</span></button>
+    <button title="¿Un ancla? Sí, es el carrito"><span>⚓</span><span class="lbl">Carrito</span></button>
+    <button title="Paraguas = Ofertas, obvio"><span>☂️</span><span class="lbl">Ofertas</span></button>
+    <button title="Una hoja para pagar"><span>🍃</span><span class="lbl">Pagar</span></button>
+    <button title="Rayo = Ayuda... ¿no?"><span>⚡</span><span class="lbl">Ayuda</span></button>
+  </div>
+  <div class="nav-marquee">
+    <span>🔥 OFERTAS QUE NO EXISTEN 🔥 PRECIOS INVENTADOS 🔥</span>
+  </div>
+</nav>
+
+<!-- POPUP ANNOYING -->
+<div id="annoyingPopup" class="hidden">
+  <button class="popup-close" onclick="document.getElementById('annoyingPopup').classList.add('hidden')">x</button>
+  <p id="popupMsg"></p>
+  <div class="popup-buttons">
+    <button onclick="document.getElementById('annoyingPopup').classList.add('hidden')">SÍ, ACEPTO TODO</button>
+    <button onclick="document.getElementById('annoyingPopup').classList.add('hidden')">TAMBIÉN ACEPTO</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1 class="hero-title">🍔 BIENVENIDO A BurgerCHAOS 🍔</h1>
+  <p class="hero-sub">La PEOR experiencia de pedido de comida rápida que jamás tendrás 🎉</p>
+  <div class="marquee-bar">
+    <span>🔥🔥🔥 OFERTA POR TIEMPO LIMITADO: ¡PAGA EL DOBLE Y LLÉVATE LA MITAD! 🔥🔥🔥 ENVÍO GRATIS* (*no realmente) 🔥🔥🔥 ACEPTAMOS MONEDAS DE CHOCOLATE 🔥🔥🔥</span>
+  </div>
+  <div class="hidden-order-wrap">
+    <p>👇 El botón de pedir está por aquí... en algún lugar 👇</p>
+    <button class="hidden-order-btn">pedir ahora</button>
+  </div>
+</div>
+
+<!-- MENÚ -->
+<section class="menu-section">
+  <h2 class="menu-title">★ NUESTRO "MENÚ" ★</h2>
+  <div class="menu-grid" id="menuGrid"></div>
+</section>
+
+<!-- CHECKOUT -->
+<section class="checkout-section">
+  <h2 class="checkout-title">💳 FORMULARIO DE "PAGO" 💳</h2>
+  <form id="badForm" class="bad-form">
+    <div>
+      <label class="lbl-green">CVV (3 dígitos):</label>
+      <input type="text" placeholder="Escribe tu nombre completo aquí" class="inp-yellow">
+    </div>
+    <div>
+      <label class="lbl-cyan">Nombre del titular:</label>
+      <input type="text" placeholder="0000 0000 0000 0000" class="inp-orange">
+    </div>
+    <div>
+      <label class="lbl-pink upside">Número de tarjeta:</label>
+      <input type="text" placeholder="123" maxlength="3" class="inp-green">
+    </div>
+    <div>
+      <label class="lbl-yellow spaced">Dirección:</label>
+      <input type="password" placeholder="••••••••" class="inp-cyan">
+      <p class="tiny-note">(por seguridad tu dirección se oculta... de ti mismo)</p>
+    </div>
+    <div class="checkbox-row">
+      <input type="checkbox" checked disabled>
+      <span>Acepto que mis datos sean vendidos a terceros, cuartos y quintos</span>
+    </div>
+    <div class="submit-wrap">
+      <button type="submit" class="hidden-submit">enviar pedido</button>
+    </div>
+    <div id="confirmation" class="hidden confirmation-box">
+      ✅ ¿PEDIDO ENVIADO? ¿QUIÉN SABE? 🤷 NO HAY CONFIRMACIÓN<br>
+      <span class="tiny-cyan">(tu dinero ya se fue, probablemente)</span>
+    </div>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="copy">© 2026 BurgerCHAOS - Todos los derechos están mal</p>
+  <p class="emoji-spin">🍔🍟🥤🍕🌭🌮🍩</p>
+  <p class="privacy">Política de privacidad: No tenemos una</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
