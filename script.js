@@ -25,6 +25,10 @@ menuItems.forEach((item, idx) => {
     <p class="desc">${item.description}</p>
     <span class="price">${item.price}</span>
     <button class="order-btn">pedir</button>
+    <div>
+      <button class="order-btn-menu" >AGREGAR A CARRITO</button>
+      <button class="order-btn-menu">COMPRAR YA </button>
+    </div>
   `;
   grid.appendChild(div);
 });
