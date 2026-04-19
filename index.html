@@ -61,6 +61,7 @@
 <section class="menu-section">
   <h2 class="menu-title">★ MENÚ ★</h2>
   <div class="menu-grid" id="menuGrid"></div>
+  
 </section>
 
 <!-- CHECKOUT -->
@@ -68,28 +69,30 @@
   <h2 class="checkout-title">💳 FORMULARIO DE "PAGO" 💳</h2>
   <form id="badForm" class="bad-form">
     <div>
-      <label class="lbl-green">CVV (3 dígitos):</label>
-      <input type="text" placeholder="Escribe tu nombre completo aquí" class="inp-yellow">
+      <label class="lbl-pink">CVV (3 dígitos):</label>
+      <input type="text" placeholder="•••" class="inp-yellow">
     </div>
     <div>
-      <label class="lbl-cyan">Nombre del titular:</label>
-      <input type="text" placeholder="0000 0000 0000 0000" class="inp-orange">
+      <label class="lbl-pink">Número de tarjeta:</label>
+      <input type="text" placeholder="•••• •••• •••• ••••" class="inp-orange">
     </div>
     <div>
-      <label class="lbl-pink upside">Número de tarjeta:</label>
-      <input type="text" placeholder="123" maxlength="3" class="inp-green">
+      <label class="lbl-pink">Nombre:</label>
+      <input type="text" placeholder="Mario" maxlength="3" class="inp-green">
     </div>
     <div>
-      <label class="lbl-yellow spaced">Dirección:</label>
-      <input type="password" placeholder="••••••••" class="inp-cyan">
+      <label class="lbl-pink">Dirección:</label>
+      <input type="password" placeholder="Av Mariscal Sucre" class="inp-cyan">
+      <!--
       <p class="tiny-note">(por seguridad tu dirección se oculta... de ti mismo)</p>
+      -->
     </div>
     <div class="checkbox-row">
-      <input type="checkbox" checked disabled>
+      <input type="checkbox">
       <span>Acepto que mis datos sean vendidos a terceros, cuartos y quintos</span>
     </div>
     <div class="submit-wrap">
-      <button type="submit" class="hidden-submit">enviar pedido</button>
+      <button type="submit" class="hidden-submit">Enviar pedido</button>
     </div>
     <div id="confirmation" class="hidden confirmation-box">
       ✅ ¿PEDIDO ENVIADO? ¿QUIÉN SABE? 🤷 NO HAY CONFIRMACIÓN<br>

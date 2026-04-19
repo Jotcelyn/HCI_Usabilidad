@@ -29,6 +29,11 @@ menuItems.forEach((item, idx) => {
     <p class="desc">${item.description}</p>
     <span class="price">${item.price}</span>
     <button class="order-btn">Ordenar</button>
+    <div class="quantity-selector">
+      <button type="button" class="btn-minus" data-idx="${idx}">-</button>
+      <input type="number" class="input" id="qty-input-${idx}" value="1" min="1" max="10" readonly>
+      <button type="button" class="btn-plus" data-idx="${idx}">+</button>
+    </div>
   `;
   grid.appendChild(div);
 });
@@ -41,6 +46,33 @@ setInterval(() => {
   nav.style.transform = `translateX(${offset}px) rotate(${offset * 0.05}deg)`;
 }, 2000);
 */
+/** 
+function increaseQty(idx) {
+    const input = document.getElementById('qty-input-${idx}');
+    if (input.value < 10) input.value = parseInt(input.value) + 1;
+}
+
+function decreaseQty(idx) {
+    const input = document.getElementById('qty-input-${idx}');
+    if (input.value > 1) input.value = parseInt(input.value) - 1;
+}
+    */
+   grid.addEventListener('click', (e) => {
+    // Detectamos si el click fue en un botón de más o menos
+    const btn = e.target;
+    const idx = parseInt(btn.getAttribute('data-idx'));
+
+
+    const input = document.getElementById(`qty-input-${idx}`);
+    let value = parseInt(input.value);
+
+    if (btn.classList.contains('btn-plus')) {
+        if (value < 10) input.value = value + 1;
+    } 
+    else if (btn.classList.contains('btn-minus')) {
+        if (value > 1) input.value = value - 1;
+    }
+});
 
 setInterval(() => {
   nav.style.display = "none";
