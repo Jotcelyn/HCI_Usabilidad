@@ -12,11 +12,11 @@
 <nav id="chaosNav">
   <h1 class="logo">🍔 BurgerCHAOS 🍔</h1>
   <div class="nav-items">
-    <button title="Esto es el menú (o no)"><span></span><span class="lbl">Menú</span></button>
-    <button title="¿Un ancla? Sí, es el carrito"><span></span><span class="lbl">Carrito</span></button>
-    <button title="Paraguas = Ofertas, obvio"><span></span><span class="lbl">Ofertas</span></button>
-    <button title="Una hoja para pagar"><span></span><span class="lbl">Pagar</span></button>
-    <button title="Rayo = Ayuda... ¿no?"><span></span><span class="lbl">Ayuda</span></button>
+    <button title="Menú"><span>🍔</span><span class="lbl">Menú</span></button>
+    <button title="Carrito"><span>🛒</span><span class="lbl">Carrito</span></button>
+    <button title="Ofertas"><span>🏷️</span><span class="lbl">Ofertas</span></button>
+    <button title="Pagar"><span>💳</span><span class="lbl">Pagar</span></button>
+    <button title="Ayuda"><span>❓</span><span class="lbl">Ayuda</span></button>
   </div>
   <div class="nav-marquee">
     <!--
@@ -72,23 +72,20 @@
   <h2 class="checkout-title">💳 FORMULARIO DE "PAGO" 💳</h2>
   <form id="badForm" class="bad-form">
     <div>
-      <label class="lbl-pink">CVV (3 dígitos):</label>
-      <input type="text" placeholder="•••" class="inp-yellow">
+      <label class="lbl-pink">Nombre:</label>
+      <input type="text" placeholder="Mario" maxlength="30" class="inp-green">
+    </div>
+    <div>
+      <label class="lbl-pink">Dirección:</label>
+      <input type="text" placeholder="Av Mariscal Sucre" class="inp-cyan">
     </div>
     <div>
       <label class="lbl-pink">Número de tarjeta:</label>
       <input type="text" placeholder="•••• •••• •••• ••••" class="inp-orange">
     </div>
     <div>
-      <label class="lbl-pink">Nombre:</label>
-      <input type="text" placeholder="Mario" maxlength="3" class="inp-green">
-    </div>
-    <div>
-      <label class="lbl-pink">Dirección:</label>
-      <input type="password" placeholder="Av Mariscal Sucre" class="inp-cyan">
-      <!--
-      <p class="tiny-note">(por seguridad tu dirección se oculta... de ti mismo)</p>
-      -->
+      <label class="lbl-pink">CVV (3 dígitos):</label>
+      <input type="text" placeholder="•••" class="inp-yellow">
     </div>
     <div class="checkbox-row">
       <input type="checkbox">
