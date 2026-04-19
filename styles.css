@@ -246,7 +246,7 @@ body {
 .menu-grid {
   display: grid;
   gap: 24px;
-  grid-template-columns: 1fr 0.5fr 2fr 0.3fr 1.5fr 0.8fr;
+  grid-template-columns: repeat(3, 1fr);
 }
 .menu-item {
   position: relative;
@@ -306,7 +306,7 @@ body {
 
 
 /* === CHECKOUT === */
-.checkout-section { margin-top: px; padding: 0 16px 80px; }
+.checkout-section { margin-top: 80px; padding: 0 16px 80px; }
 .checkout-title {
   font-size: 2.5rem;
   color: var(--crema);
@@ -323,7 +323,7 @@ body {
   border: 4px solid var(--neon-pink);
   background: var(--card);
   padding: 24px;
-  transform: rotate(-2deg);
+  transform: rotate(0deg);
   font-family: 'Comic Sans MS', cursive;
 }
 .bad-form > div { margin-bottom: 16px; }
