@@ -2,43 +2,83 @@
 
 // MENÚ DATA
 const menuItems = [
-  { name: "Hamburguesa Caótica", price: "$∞.99", emoji: "🍔", description: "Con ingredientes que ni nosotros sabemos" },
-  { name: "Papas del Desorden", price: "$-3.50", emoji: "🍟", description: "Pueden o no venir en tu pedido" },
-  { name: "Refresco Misterioso", price: "$π", emoji: "🥤", description: "Sabor sorpresa (siempre es vinagre)" },
-  { name: "Nuggets Fantasma", price: "$404", emoji: "🐔", description: "No encontrados" },
-  { name: "Pizza... sí, Pizza", price: "$¿?", emoji: "🍕", description: "Esto es de hamburguesas pero ok" },
-  { name: "Ensalada Rebelde", price: "$666", emoji: "🥗", description: "Se niega a ser saludable" },
+  { name: "Hamburguesa", price: "$1.99", emoji: "🍔", description: "Nuestra receta insignia. 200g de carne de res premium a la parrilla, doble queso cheddar fundido, tocino ahumado crujiente y nuestra salsa secreta 'Chaos' en pan brioche artesanal" },
+  { name: "Papas", price: "$1.50", emoji: "🍟", description: "Papas rústicas cortadas a mano, sazonadas con una mezcla de especias de la casa. Servidas con un dip de queso fundido y cebollín." },
+  { name: "Refresco", price: "$0.75", emoji: "🥤", description: "Bebida refrescante de la casa. Elige entre nuestros sabores de temporada: Frutos rojos, Limonada de coco o Té frío de la casa" },
+  { name: "Nuggets", price: "$4.04", emoji: "🐔", description: "6 piezas de pechuga de pollo marinadas y empanizadas con panko, acompañadas de salsa de miel y mostaza." },
+  { name: "Pizza", price: "$2.50", emoji: "🍕", description: "Masa artesanal de maduración lenta, salsa de tomate de la casa, abundante queso mozzarella y rodajas de peperoni premium. Horneada a la perfección para un borde crujiente." },
+  { name: "Ensalada", price: "$3.50", emoji: "🥗", description: "Mix de verdes frescos, tomates cherry, aguacate, maíz dulce y pollo a la plancha. Todo bañado en una vinagreta ligera de cítricos." },
 ];
 
-// Renderizar menú con rotaciones y tamaños de fuente caóticos
+// Renderizar menú con rotaciones y tamaños de fuente caóticos 
+
 const grid = document.getElementById("menuGrid");
 menuItems.forEach((item, idx) => {
   const div = document.createElement("div");
   div.className = "menu-item" + (idx === 2 ? " vertical" : "");
+  /**
   const rot = (idx % 2 === 0 ? 1 : -1) * (3 + idx);
   div.style.transform = `rotate(${rot}deg) translateY(${idx * 15}px)`;
+
   div.style.fontFamily = idx % 2 === 0 ? "'Comic Sans MS', cursive" : "'Papyrus', fantasy";
   div.style.fontSize = `${12 + idx * 4}px`;
+  */
   div.innerHTML = `
     <span class="emoji">${item.emoji}</span>
     <h3>${item.name}</h3>
     <p class="desc">${item.description}</p>
     <span class="price">${item.price}</span>
-    <button class="order-btn">pedir</button>
+
+    <button class="order-btn">Ordenar</button>
+    <div class="quantity-selector">
+      <button type="button" class="btn-minus" data-idx="${idx}">-</button>
+      <input type="number" class="input" id="qty-input-${idx}" value="1" min="1" max="10" readonly>
+      <button type="button" class="btn-plus" data-idx="${idx}">+</button>
+</div>
     <div>
       <button class="order-btn-menu" >AGREGAR A CARRITO</button>
       <button class="order-btn-menu">COMPRAR YA </button>
+
     </div>
   `;
   grid.appendChild(div);
 });
 
 // NAV que se mueve y desaparece
+/**
 const nav = document.getElementById("chaosNav");
 setInterval(() => {
   const offset = Math.random() * 200 - 100;
   nav.style.transform = `translateX(${offset}px) rotate(${offset * 0.05}deg)`;
 }, 2000);
+*/
+/** 
+function increaseQty(idx) {
+    const input = document.getElementById('qty-input-${idx}');
+    if (input.value < 10) input.value = parseInt(input.value) + 1;
+}
+
+function decreaseQty(idx) {
+    const input = document.getElementById('qty-input-${idx}');
+    if (input.value > 1) input.value = parseInt(input.value) - 1;
+}
+    */
+   grid.addEventListener('click', (e) => {
+    // Detectamos si el click fue en un botón de más o menos
+    const btn = e.target;
+    const idx = parseInt(btn.getAttribute('data-idx'));
+
+
+    const input = document.getElementById(`qty-input-${idx}`);
+    let value = parseInt(input.value);
+
+    if (btn.classList.contains('btn-plus')) {
+        if (value < 10) input.value = value + 1;
+    } 
+    else if (btn.classList.contains('btn-minus')) {
+        if (value > 1) input.value = value - 1;
+    }
+});
 
 setInterval(() => {
   nav.style.display = "none";
