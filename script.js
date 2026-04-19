@@ -28,11 +28,17 @@ menuItems.forEach((item, idx) => {
     <h3>${item.name}</h3>
     <p class="desc">${item.description}</p>
     <span class="price">${item.price}</span>
+
     <button class="order-btn">Ordenar</button>
     <div class="quantity-selector">
       <button type="button" class="btn-minus" data-idx="${idx}">-</button>
       <input type="number" class="input" id="qty-input-${idx}" value="1" min="1" max="10" readonly>
       <button type="button" class="btn-plus" data-idx="${idx}">+</button>
+</div>
+    <div>
+      <button class="order-btn-menu" >AGREGAR A CARRITO</button>
+      <button class="order-btn-menu">COMPRAR YA </button>
+
     </div>
   `;
   grid.appendChild(div);

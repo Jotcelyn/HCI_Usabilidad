@@ -206,14 +206,30 @@ body {
 }
 .hidden-order-btn {
   position: absolute;
-  bottom: 50px; left: 47%;
-  font-size: 14px;
-  padding: 2px;
-  opacity: 0.08;
-  background: var(--crema);
-  color: var(--foreground);
-  border: none;
+
+  bottom: 5px; 
+  right: 5px;
+  background-color: #39ff14;
+  color:black;
+  padding: 5px 10px;
+  border: 4px solid var(--neon-orange);
+  cursor: pointer;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
 }
+
+.order-btn-menu{
+  cursor: pointer;
+  border: 2px solid yellow;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  padding: 5px;
+  font-size: 14px;
+  background-color: #39ff14 ;
+  color: black ;
+  font-weight: bold;
+  position: relative;
+  display: block;
+  margin-top: 10px;
+
 
 /* === MENÚ === */
 .menu-section { margin-top: 96px; padding: 0 16px; }
