@@ -100,8 +100,43 @@ setInterval(() => {
   setTimeout(() => popup.classList.add("hidden"), 3500);
 }, 5000);
 
-// FORM submit (sin confirmación real)
+// Validaciones en tiempo real para inputs del formulario
+const cardName = document.getElementById("cardName");
+const cardNumber = document.getElementById("cardNumber");
+const cardCVV = document.getElementById("cardCVV");
+
+if (cardName) {
+  cardName.addEventListener("input", function(e) {
+    // Solo permitir letras y espacios, borrando cualquier número ingresado inmediatamente
+    this.value = this.value.replace(/[0-9]/g, "");
+  });
+}
+
+if (cardNumber) {
+  cardNumber.addEventListener("input", function(e) {
+    // Quitar todo lo que no sea dígito
+    let val = this.value.replace(/\D/g, "");
+    // Formatear en bloques de 4: XXXX XXXX XXXX XXXX
+    val = val.replace(/(.{4})/g, "$1 ").trim();
+    // Limitar que no nos pasemos de 19 caracteres (16 números + 3 espacios)
+    this.value = val.substring(0, 19);
+  });
+}
+
+if (cardCVV) {
+  cardCVV.addEventListener("input", function(e) {
+    // Quitar todo lo que no sea dígito y limitar a 3 números máximos
+    let val = this.value.replace(/\D/g, "");
+    this.value = val.substring(0, 3);
+  });
+}
+
+// FORM submit (seguro con confirmación)
 document.getElementById("badForm").addEventListener("submit", (e) => {
   e.preventDefault();
-  document.getElementById("confirmation").classList.remove("hidden");
+  // Validamos la intención del usuario pidiendo confirmación explícita (Safe to Use)
+  if (confirm("¿Estás completamente seguro de que deseas proceder con el pago y procesar la compra?")) {
+    document.getElementById("confirmation").classList.remove("hidden");
+    document.getElementById("badForm").reset(); // Limpieza del formulario
+  }
 });
