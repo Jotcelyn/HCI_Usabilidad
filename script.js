@@ -246,7 +246,7 @@ if (cvvInp) {
 const termsBtn = document.getElementById('viewTerms');
 if (termsBtn) {
   termsBtn.addEventListener('click', () => {
-    alert("TÉRMINOS Y CONDICIONES:\n\n1. Tu pedido llegará cuando el caos lo permita.\n2. No nos hacemos responsables por hambre extrema.\n3. Disfruta tu hamburguesa con seguridad.");
+    alert("TÉRMINOS Y CONDICIONES:\n\n1. El tiempo de entrega puede variar según la demanda y ubicación.\n2. BurgerCHAOS garantiza la calidad y frescura de sus productos.\n3. Su información personal será tratada con total confidencialidad.");
   });
 }
 

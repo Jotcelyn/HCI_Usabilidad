@@ -62,7 +62,7 @@
 <!-- MENÚ -->
 
 <section class="menu-section" id ="menu-section">
-  <h2 class="menu-title">★ NUESTRO "MENÚ" ★</h2>
+  <h2 class="menu-title">★ NUESTRO MENÚ ★</h2>
 
   <div class="menu-grid" id="menuGrid"></div>
   
@@ -70,7 +70,7 @@
 
 <!-- CHECKOUT -->
 <section class="checkout-section">
-  <h2 class="checkout-title">💳 FORMULARIO DE "PAGO" 💳</h2>
+  <h2 class="checkout-title">💳 FINALIZAR PEDIDO 💳</h2>
   <form id="badForm" class="bad-form">
     <div>
       <label class="lbl-pink">Nombre:</label>
@@ -89,8 +89,8 @@
       <input type="text" placeholder="•••" class="inp-yellow">
     </div>
     <div class="checkbox-row">
-      <input type="checkbox">
-      <span>Acepto que mis datos sean vendidos a terceros, cuartos y quintos</span>
+      <input type="checkbox" id="termsCheck">
+      <span>He leído y acepto los <a href="javascript:void(0)" id="viewTerms" style="color: var(--neon-cyan); text-decoration: underline;">términos y condiciones</a> de servicio.</span>
     </div>
     <div class="submit-wrap">
       <button type="submit" class="hidden-submit">Enviar pedido</button>
@@ -104,9 +104,9 @@
 
 <!-- FOOTER -->
 <footer>
-  <p class="copy">© 2026 BurgerCHAOS - Todos los derechos están mal</p>
+  <p class="copy">© 2026 BurgerCHAOS - Todos los derechos reservados</p>
   <p class="emoji-spin">🍔🍟🥤🍕🌭🌮🍩</p>
-  <p class="privacy">Política de privacidad: No tenemos una</p>
+  <p class="privacy">Política de privacidad | Términos de Servicio</p>
 </footer>
 
 <script src="script.js"></script>
