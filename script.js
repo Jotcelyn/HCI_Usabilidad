@@ -14,6 +14,7 @@ const menuItems = [
 
 const grid = document.getElementById("menuGrid");
 menuItems.forEach((item, idx) => {
+
   const div = document.createElement("div");
   div.className = "menu-item" + (idx === 2 ? " vertical" : "");
   /**
@@ -26,7 +27,11 @@ menuItems.forEach((item, idx) => {
   div.innerHTML = `
     <span class="emoji">${item.emoji}</span>
     <h3>${item.name}</h3>
-    <p class="desc">${item.description}</p>
+
+    <div class="extra-info">
+      <p class="desc">${item.description}</p>
+    </div>
+
     <span class="price">${item.price}</span>
 
     <div class="quantity-selector">
@@ -36,7 +41,23 @@ menuItems.forEach((item, idx) => {
     </div>
     <button class="order-btn-menu">🛒 AGREGAR AL CARRITO</button>
   `;
-  grid.appendChild(div);
+    grid.appendChild(div);
+
+    const btn = div.querySelector('.order-btn-menu');
+
+    btn.addEventListener('click', () => {
+      const originalText = btn.innerHTML;
+    
+      btn.innerHTML = "¡AÑADIDO! ✅";
+      btn.classList.add('added-state');
+     btn.style.pointerEvents = "none";
+
+     setTimeout(() => {
+       btn.innerHTML = originalText;
+       btn.classList.remove('added-state');
+        btn.style.pointerEvents = "auto";
+      }, 1500);
+  });
 });
 
 // NAV que se mueve y desaparece
