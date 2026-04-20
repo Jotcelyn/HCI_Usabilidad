@@ -30,13 +30,14 @@
   <button class="popup-close" onclick="document.getElementById('annoyingPopup').classList.add('hidden')">x</button>
   <p id="popupMsg"></p>
   <div class="popup-buttons">
-    <button type="button" onclick="document.getElementById('annoyingPopup').classList.add('hidden')">Oferta Genial (Aceptar)</button>
-    <button type="button" onclick="document.getElementById('annoyingPopup').classList.add('hidden')" style="background-color: #ff4757; color: white;">No me interesa (Cancelar)</button>
+    <button onclick="document.getElementById('annoyingPopup').classList.add('hidden')">¡ENTENDIDO!</button>
+    <button onclick="document.getElementById('annoyingPopup').classList.add('hidden')">CERRAR</button>
   </div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
+  
   <h1 class="hero-title">🍔 BIENVENIDO A BurgerCHAOS 🍔</h1>
   <!--
   <p class="hero-sub">La PEOR experiencia de pedido de comida rápida que jamás tendrás 🎉</p>
@@ -73,30 +74,30 @@
   <form id="badForm" class="bad-form">
     <div>
       <label class="lbl-pink">Nombre:</label>
-      <input type="text" id="cardName" placeholder="Mario" maxlength="30" class="inp-green" required>
+      <input type="text" placeholder="Mario" maxlength="30" class="inp-green">
     </div>
     <div>
       <label class="lbl-pink">Dirección:</label>
-      <input type="text" id="cardAddress" placeholder="Av Mariscal Sucre" class="inp-cyan" required>
+      <input type="text" placeholder="Av Mariscal Sucre" class="inp-cyan">
     </div>
     <div>
       <label class="lbl-pink">Número de tarjeta:</label>
-      <input type="text" id="cardNumber" placeholder="•••• •••• •••• ••••" class="inp-orange" pattern="([0-9]{4}\s){3}[0-9]{4}" maxlength="19" required title="Ingresa los 16 dígitos de la tarjeta">
+      <input type="text" placeholder="•••• •••• •••• ••••" class="inp-orange">
     </div>
     <div>
       <label class="lbl-pink">CVV (3 dígitos):</label>
-      <input type="password" id="cardCVV" placeholder="•••" class="inp-yellow" pattern="[0-9]{3}" maxlength="3" required title="El CVV debe ser de exactamente 3 dígitos">
+      <input type="text" placeholder="•••" class="inp-yellow">
     </div>
     <div class="checkbox-row">
-      <input type="checkbox" id="terms" required>
-      <label for="terms">Acepto los Términos y Condiciones normales de compra</label>
+      <input type="checkbox">
+      <span>Acepto que mis datos sean vendidos a terceros, cuartos y quintos</span>
     </div>
     <div class="submit-wrap">
-      <button type="submit" class="hidden-submit">Confirmar y Pagar</button>
+      <button type="submit" class="hidden-submit">Enviar pedido</button>
     </div>
     <div id="confirmation" class="hidden confirmation-box">
-      ✅ ¡Pedido completado exitosamente! Tu orden está confirmada.<br>
-      <span class="tiny-cyan">Recibirás un recibo en tu correo electrónico.</span>
+      ✅ ¡PEDIDO RECIBIDO CON ÉXITO!<br>
+      <span class="tiny-cyan">Estamos preparando tu comida siguiendo todos los protocolos de seguridad.</span>
     </div>
   </form>
 </section>
